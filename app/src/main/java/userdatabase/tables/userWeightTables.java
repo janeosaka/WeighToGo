@@ -4,7 +4,6 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
-
 import java.util.ArrayList;
 
 public class userWeightTables {
@@ -12,7 +11,7 @@ public class userWeightTables {
     public static final String TAG = "DATABASE";
     public static final String TABLE_NAME = "userweight";
 
-    public static final String CMD_CREATE_TABLE = "CREATE TABLE IF NOT EXISTS"
+    public static final String CMD_CREATE_TABLE = "CREATE TABLE IF NOT EXISTS "
             + TABLE_NAME
             + "( id INTEGER PRIMARY KEY AUTOINCREMENT , weight REAL ) ;";
 
@@ -31,6 +30,14 @@ public class userWeightTables {
          * insert the column into the database
          */
         db.insert(TABLE_NAME, null, contentValues);
+    }
+
+    public static void removeWeight(SQLiteDatabase db, double weight){
+        if(db.isReadOnly()){
+            Log.w(TAG, "Not writable");
+            return;
+        }
+        db.delete(TABLE_NAME, "weight = ?", new String[]{""+weight});
     }
 
     public static ArrayList<Double> fetchWeight(SQLiteDatabase db) {
