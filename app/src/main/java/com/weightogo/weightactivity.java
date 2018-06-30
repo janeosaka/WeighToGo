@@ -39,7 +39,7 @@ public class weightactivity extends AppCompatActivity {
             public void onClick(View v) {
                 MyDatabaseHelper dbHelper = new MyDatabaseHelper(weightactivity.this);
                 db = dbHelper.getWritableDatabase();
-    
+
                 inputWeight = (EditText)findViewById(R.id.inputWeight);
                 String weight = inputWeight.getText().toString();
                 double weightNumber = Double.parseDouble(weight);
