@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void displayUserWeight(){
         displayWeight = (TextView)findViewById(R.id.displayWeight);
-
 //        PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("MYLABEL", "myStringToSave").apply();
 //        PreferenceManager.getDefaultSharedPreferences(context).getString("MYLABEL", "defaultStringIfNothingFound");
         displayWeight.setText(getIntent().getStringExtra("weight"));
