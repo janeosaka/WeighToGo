@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+    
 
     public void displayUserWeight(){
         displayWeight = (TextView)findViewById(R.id.displayWeight);
