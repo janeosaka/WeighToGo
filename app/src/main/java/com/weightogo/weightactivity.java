@@ -2,6 +2,7 @@ package com.weightogo;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,8 +33,8 @@ public class weightactivity extends AppCompatActivity {
     }
 
     public void initSave(){
-        // Complete this save button
         saveButton = (Button)findViewById(R.id.saveButton);
+
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,6 +52,8 @@ public class weightactivity extends AppCompatActivity {
             }
         });
     }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
