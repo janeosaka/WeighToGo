@@ -90,7 +90,7 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:gravity="right"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:text="0.00"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
