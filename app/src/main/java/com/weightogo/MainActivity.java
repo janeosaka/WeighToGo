@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     public Button ccButton;
     public TextView displayWeight;
     public TextView displayAverage;
-
+    public TextView displayDifference;
 
     public void initWeight() {
         weightButton = (Button) findViewById(R.id.weightButton);
@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
     public Double getAverage() {
@@ -63,32 +62,40 @@ public class MainActivity extends AppCompatActivity {
         return avg;
     }
 
-
     public void displayUserWeight() {
         displayWeight = (TextView) findViewById(R.id.displayWeight);
         displayWeight.setText(getIntent().getStringExtra("weight"));
-
     }
 
     public void displayWeightAverage() {
-
         displayAverage = (TextView) findViewById(R.id.displayAverage);
         String averageValue = String.format("%.2f", getAverage());
         displayAverage.setText(averageValue);
         displayAverage.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-
                 MyDatabaseHelper dbHelper = new MyDatabaseHelper(MainActivity.this);
                 SQLiteDatabase db = dbHelper.getWritableDatabase();
                 db.execSQL("DROP TABLE " + userWeightTables.TABLE_NAME);
-
-//                db.execSQL("DROP TABLE IF EXISTS "+userWeightTables.TABLE_NAME);
-
                 dbHelper.onCreate(db);
                 return true;
             }
         });
+    }
+
+    public void displayWeightDifference(ArrayList<Double> weightArray){
+        displayDifference = (TextView) findViewById(R.id.displayDifference);
+        String weightDifference = " ";
+        if(weightArray.size() > 0){
+            double staringWeight = weightArray.get(0);
+            double currentWeight = weightArray.get(weightArray.size() - 1);
+            double difference = currentWeight - staringWeight ;
+            weightDifference = String.valueOf(difference);
+            if(difference > 0){
+                weightDifference = "+" + weightDifference;
+            }
+        }
+        displayDifference.setText(weightDifference);
     }
 
     public void buildGraph() {
@@ -112,12 +119,14 @@ public class MainActivity extends AppCompatActivity {
         }
         graph.getViewport().setMaxX(HiProfWang.size());
         graph.getViewport().setXAxisBoundsManual(true);
-
         // enable scrolling
         graph.getViewport().setScrollable(true); // horizontal scrolling
-
         graph.addSeries(series);
+        displayWeightDifference(HiProfWang);
     }
+
+
+
 
 
     @Override
@@ -130,8 +139,5 @@ public class MainActivity extends AppCompatActivity {
         displayUserWeight();
         displayWeightAverage();
         buildGraph();
-
     }
-
-
 }
