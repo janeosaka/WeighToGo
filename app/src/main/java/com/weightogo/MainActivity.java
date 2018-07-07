@@ -73,7 +73,8 @@ public class MainActivity extends AppCompatActivity {
     public void displayWeightAverage() {
 
         displayAverage = (TextView) findViewById(R.id.displayAverage);
-        displayAverage.setText(getAverage().toString());
+        String averageValue = String.format("%.2f", getAverage());
+        displayAverage.setText(averageValue);
         displayAverage.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
