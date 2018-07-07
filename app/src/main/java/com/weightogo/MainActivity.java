@@ -103,15 +103,15 @@ public class MainActivity extends AppCompatActivity {
         LineGraphSeries<DataPoint> series = new LineGraphSeries<>(dpvals);
 
         graph.getViewport().setYAxisBoundsManual(false);
-        graph.getViewport().setXAxisBoundsManual(false);
-//        graph.getViewport().setYAxisBoundsManual(true);
-//        graph.getViewport().setMinY(60);
-//        graph.getViewport().setMaxY(200);
-//
-//        graph.getViewport().setXAxisBoundsManual(true);
-//        graph.getViewport().setMinX(0);
-//        graph.getViewport().setMaxX(HiProfWang.size() + 1);
 
+        if(HiProfWang.size() < 7){
+            graph.getViewport().setMinX(1);
+        }
+        else{
+            graph.getViewport().setMinX(HiProfWang.size() - 6);
+        }
+        graph.getViewport().setMaxX(HiProfWang.size());
+        graph.getViewport().setXAxisBoundsManual(true);
 
         // enable scrolling
         graph.getViewport().setScrollable(true); // horizontal scrolling

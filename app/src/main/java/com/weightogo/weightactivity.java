@@ -28,6 +28,7 @@ public class weightactivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(weightactivity.this, MainActivity.class);
                 startActivity(intent);
+
             }
         });
     }
@@ -49,6 +50,7 @@ public class weightactivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 intent.putExtra("weight",inputWeight.getText().toString());
                 startActivity(intent);
+
             }
         });
     }
