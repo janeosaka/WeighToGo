@@ -1,12 +1,15 @@
 package com.weightogo;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
@@ -14,6 +17,7 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import userdatabase.MyDatabaseHelper;
 import userdatabase.tables.userWeightTables;
@@ -31,8 +35,27 @@ public class MainActivity extends AppCompatActivity {
         weightButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, weightactivity.class);
-                startActivity(intent);
+
+                SharedPreferences sPref = getSharedPreferences("oneDayTillNextWeight", Context.MODE_PRIVATE);
+                SharedPreferences.Editor mEditor = sPref.edit();
+
+                Calendar calendar = Calendar.getInstance();
+
+                int year = calendar.get(Calendar.YEAR);
+                int month = calendar.get(Calendar.MONTH);
+                int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+                String dateToday = String.valueOf(year)+String.valueOf(month)+String.valueOf(day);
+                String dateToCheck = sPref.getString("lastDate", "default");
+
+                if(!dateToCheck.equals(dateToday)){
+                    Intent intent = new Intent(MainActivity.this, weightactivity.class);
+                    startActivity(intent);
+                } else{
+                    Toast toast = Toast.makeText(getApplicationContext(), "You have already enterd today's weight.",
+                            Toast.LENGTH_SHORT);
+                    toast.show();
+                }
             }
         });
     }
