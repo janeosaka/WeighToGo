@@ -41,6 +41,8 @@ public class registerActivity extends AppCompatActivity {
                         mEditor.commit();
                         mEditor.putString(passwordString, pw);
                         mEditor.commit();
+                        mEditor.putInt("numberOfUsers", 1);
+                        mEditor.commit();
 
                         Intent intent = new Intent(registerActivity.this, loginActivity.class);
                         startActivity(intent);

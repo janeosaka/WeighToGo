@@ -48,37 +48,36 @@
 
     <Button
         android:id="@+id/cancelButton"
+        style="@style/Base.Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginLeft="64dp"
         android:layout_marginStart="64dp"
         android:layout_marginTop="8dp"
+        android:backgroundTint="@android:color/holo_red_light"
         android:text="@android:string/cancel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.519"
-        style="@style/Base.Widget.AppCompat.Button.Borderless"/>
+        app:layout_constraintVertical_bias="0.519" />
 
     <Button
         android:id="@+id/saveButton"
+        style="@style/Base.Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="68dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="68dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:backgroundTint="@android:color/holo_green_dark"
         android:text="Save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/cancelButton"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.519"
-        style="@style/Base.Widget.AppCompat.Button.Borderless"/>
+        app:layout_constraintVertical_bias="0.519" />
 
     <EditText
         android:id="@+id/inputWeight"

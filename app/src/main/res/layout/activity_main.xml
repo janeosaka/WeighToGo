@@ -19,39 +19,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.615" />
+
     <Button
         android:id="@+id/ccButton"
-        style="@style/Base.Widget.AppCompat.Button.Borderless"
         android:layout_width="100dp"
         android:layout_height="56dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginRight="56dp"
+        android:layout_marginEnd="60dp"
         android:layout_marginTop="8dp"
+        android:backgroundTint="@android:color/holo_green_light"
         android:text="Count Calories"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.906" />
+        app:layout_constraintVertical_bias="0.905" />
 
     <Button
         android:id="@+id/weightButton"
-        style="@style/Base.Widget.AppCompat.Button.Borderless"
         android:layout_width="100dp"
         android:layout_height="56dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:backgroundTint="@android:color/holo_green_light"
         android:text="Enter Weight"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/ccButton"
-        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.906" />
+        app:layout_constraintVertical_bias="0.905" />
 
     <TextView
         android:id="@+id/avgWeight"
@@ -74,8 +72,7 @@
         android:layout_width="63dp"
         android:layout_height="41dp"
         android:layout_marginBottom="96dp"
-        android:layout_marginLeft="76dp"
-        android:layout_marginStart="76dp"
+        android:layout_marginStart="64dp"
         android:gravity="center"
         android:text="Current Weight"
         app:layout_constraintBottom_toTopOf="@+id/weightButton"
@@ -103,15 +100,12 @@
         android:layout_height="37dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="display"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.546"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/currentWeight"
         app:layout_constraintVertical_bias="0.077" />
@@ -141,16 +135,14 @@
         android:layout_height="35dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.672"
+        app:layout_constraintHorizontal_bias="0.693"
         app:layout_constraintStart_toEndOf="@+id/displayWeight"
         app:layout_constraintTop_toBottomOf="@+id/diffWeight"
-        app:layout_constraintVertical_bias="0.089" />
+        app:layout_constraintVertical_bias="0.076" />
 
 
 </android.support.constraint.ConstraintLayout>

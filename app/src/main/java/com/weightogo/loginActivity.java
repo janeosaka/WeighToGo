@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.PopupWindow;
 import android.widget.Toast;
 
 public class loginActivity extends AppCompatActivity {
@@ -53,8 +54,20 @@ public class loginActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(loginActivity.this, registerActivity.class);
-                startActivity(intent);
+
+                SharedPreferences loginPref = getSharedPreferences("LoginInfo", 0);
+                int numberOfUsers = loginPref.getInt("numberOfUsers", 0);
+                if(numberOfUsers == 0){
+                    Intent intent = new Intent(loginActivity.this, registerActivity.class);
+                    startActivity(intent);
+                }
+                else{
+                    Toast toast2 = Toast.makeText(getApplicationContext(), "This version only supports one user.",
+                            Toast.LENGTH_LONG);
+                    toast2.show();
+                }
+
+
             }
         });
     }
