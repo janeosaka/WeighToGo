@@ -84,7 +84,7 @@
         android:layout_width="129dp"
         android:layout_height="43dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginStart="72dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:gravity="right"
@@ -94,7 +94,7 @@
         app:layout_constraintStart_toEndOf="@+id/weightText"
         app:layout_constraintTop_toTopOf="parent"
 
-        app:layout_constraintVertical_bias="0.342" />
+        app:layout_constraintVertical_bias="0.33" />
 
     <TextView
         android:id="@+id/poundsUnit"
@@ -102,8 +102,6 @@
         android:layout_height="35dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:gravity="left"
@@ -111,8 +109,8 @@
         android:textSize="21dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.843"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/inputWeight"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.354" />
+        app:layout_constraintVertical_bias="0.341" />
 </android.support.constraint.ConstraintLayout>

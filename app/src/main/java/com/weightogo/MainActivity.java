@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 String dateToday = String.valueOf(year)+String.valueOf(month)+String.valueOf(day);
                 String dateToCheck = sPref.getString("lastDate", "default");
 
+                /*
                 if(!dateToCheck.equals(dateToday)){
                     Intent intent = new Intent(MainActivity.this, weightactivity.class);
                     startActivity(intent);
@@ -59,6 +60,12 @@ public class MainActivity extends AppCompatActivity {
                             Toast.LENGTH_SHORT);
                     toast.show();
                 }
+                *////////
+                //REMOVE AFTER TESTING
+                Intent intent = new Intent(MainActivity.this, weightactivity.class);
+                startActivity(intent);
+                /////////////////
+
             }
         });
     }
@@ -147,11 +154,12 @@ public class MainActivity extends AppCompatActivity {
 
             if(HiProfWang.size() < 7){
                 graph.getViewport().setMinX(1);
+                graph.getViewport().setMaxX(8);
             }
             else{
                 graph.getViewport().setMinX(HiProfWang.size() - 6);
+                graph.getViewport().setMaxX(HiProfWang.size());
             }
-            graph.getViewport().setMaxX(HiProfWang.size());
             graph.getViewport().setXAxisBoundsManual(true);
             // enable scrolling
             graph.getViewport().setScrollable(true); // horizontal scrolling
