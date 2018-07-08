@@ -9,13 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:noHistory="true"/>
-        <activity android:name=".weightactivity"
-            android:noHistory="true"/>
-        <activity android:name=".calorieactivity"
-            android:noHistory="true"/>
-        <activity android:name=".loginActivity"
+        <activity
+            android:name=".weightactivity"
+             android:noHistory="true"/>
+        <activity
+            android:name=".calorieactivity"
+            android:noHistory="true" />
+        <activity
+            android:name=".loginActivity"
+            android:noHistory="true" />
+        <activity
+            android:name=".registerActivity"
             android:noHistory="true"/>
         <activity
             android:name=".SplashActivity"
@@ -23,8 +30,9 @@
             android:label="@string/title_activity_splash"
             android:theme="@style/FullscreenTheme">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>

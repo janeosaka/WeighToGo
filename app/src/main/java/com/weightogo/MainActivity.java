@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void displayUserWeight() {
-        displayWeight = (TextView) findViewById(R.id.displayWeight);
+
         displayWeight.setText(getIntent().getStringExtra("weight"));
     }
 
@@ -151,12 +151,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         displayWeight = (TextView) findViewById(R.id.displayWeight);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         initWeight();
         initCalorieCounter();
         displayUserWeight();
