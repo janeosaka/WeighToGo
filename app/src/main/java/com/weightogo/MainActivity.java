@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.view.MenuItem;
 
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     public Button ccButton;
     public TextView displayWeight;
     public TextView displayAverage;
+    public TextView displayDifference;
 
 
     public void initWeight() {
@@ -52,16 +54,28 @@ public class MainActivity extends AppCompatActivity {
     public Double getAverage() {
         MyDatabaseHelper dbHelper = new MyDatabaseHelper(MainActivity.this);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-        ArrayList<Double> HiProfWang = userWeightTables.fetchWeight(db);
+        ArrayList<Double> listOfWeight = userWeightTables.fetchWeight(db);
         DecimalFormat df2 = new DecimalFormat("#.00");
         double sum = 0.0;
-        for (int i = 0; i < HiProfWang.size(); i++) {
-            sum += HiProfWang.get(i);
+        for (int i = 0; i < listOfWeight.size(); i++) {
+            sum += listOfWeight.get(i);
         }
-        Double avg = sum / HiProfWang.size();
+        Double avg = sum / listOfWeight.size();
         df2.format(avg);
         return avg;
     }
+
+//    public void displayDifference(){
+//        Double avg = getAverage();
+//        Double difference=0.00;
+//
+//        displayDifference = (TextView)findViewById(R.id.displayDifference);
+//        Double weight = Double.parseDouble(getIntent().getStringExtra("weight"));
+//
+//        difference = avg - weight;
+//        displayDifference.setText(""+difference);
+//
+//    }
 
 
     public void displayUserWeight() {
@@ -102,12 +116,13 @@ public class MainActivity extends AppCompatActivity {
         LineGraphSeries<DataPoint> series = new LineGraphSeries<>(dpvals);
 
         graph.getViewport().setYAxisBoundsManual(true);
-
         graph.getViewport().setXAxisBoundsManual(true);
 
         // enable scrolling
-        graph.getViewport().setScrollable(true); // horizontal scrolling
-
+        graph.getViewport().setScrollable(true); // enables horizontal scrolling
+        graph.getViewport().setScrollableY(true); // enables vertical scrolling
+        graph.getViewport().setScalable(true); // enables horizontal zooming and scrolling
+        graph.getViewport().setScalableY(true); // enables vertical zooming and scrolling
         graph.addSeries(series);
     }
 
@@ -122,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
         displayUserWeight();
         displayWeightAverage();
         buildGraph();
+//        displayDifference();
 
     }
 

@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Weigh To Go</string>
+    <string-array name="array_food">
+        <item>Apple                 95cal</item>
+        <item>Banana                105cal</item>
+        <item>Blueberries (1 cup)   85cal</item>
+        <item>Mango                 205cal</item>
+        <item>Strawberries (1 cup)  49cal</item>
+        <item>Kiwi                  42cal</item>
+        <item>Egg (Fried)           90cal</item>
+        <item>Egg (Poached)         71cal</item>
+        <item>Egg (Scrambled)       91cal</item>
+        <item>Egg (Baked)           73cal</item>
+        <item>Egg (Hard-Boiled)     78cal</item>
+        <item>Egg (Omelette)        94cal</item>
+    </string-array>
 </resources>
