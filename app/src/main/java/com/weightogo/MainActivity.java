@@ -1,12 +1,15 @@
 
 package com.weightogo;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -25,11 +28,17 @@ import userdatabase.tables.userWeightTables;
 
 public class MainActivity extends AppCompatActivity {
 
-    public Button weightButton;
-    public Button ccButton;
-    public TextView displayWeight;
-    public TextView displayAverage;
-    public TextView displayDifference;
+    private Button weightButton;
+    private Button ccButton;
+    private TextView displayWeight;
+    private TextView displayAverage;
+    private TextView displayDifference;
+
+    private int xDimensionSize = 7;
+
+    private  Button weeklyButton, monthlyButton, yearlyButton;
+
+
     private GraphView graph;
 
 
@@ -139,7 +148,48 @@ public class MainActivity extends AppCompatActivity {
         displayDifference.setText(weightDifference);
     }
 
+
     public void buildGraph() {
+        graph.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                final AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
+                final View mView = getLayoutInflater().inflate(R.layout.dialog_graphx, null);
+
+                weeklyButton = (Button)mView.findViewById(R.id.weeklyButton);
+                monthlyButton = (Button)mView.findViewById(R.id.monthlyButton);
+                yearlyButton = (Button)mView.findViewById(R.id.yearlyButton);
+
+                mBuilder.setView(mView);
+                final AlertDialog dialog = mBuilder.create();
+                dialog.show();
+                weeklyButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        xDimensionSize = 7;
+                        buildGraph();
+                        dialog.dismiss();
+                    }
+                });
+                monthlyButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        xDimensionSize = 30;
+                        buildGraph();
+                        dialog.dismiss();
+                    }
+                });
+                yearlyButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        xDimensionSize = 365;
+                        buildGraph();
+                        dialog.dismiss();
+                    }
+                });
+                return false;
+            }
+        });
         MyDatabaseHelper dbHelper = new MyDatabaseHelper(MainActivity.this);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ArrayList<Double> HiProfWang = userWeightTables.fetchWeight(db);
@@ -151,16 +201,17 @@ public class MainActivity extends AppCompatActivity {
             LineGraphSeries<DataPoint> series = new LineGraphSeries<>(dpvals);
 
             graph.getViewport().setYAxisBoundsManual(false);
+            graph.getViewport().setXAxisBoundsManual(true);
 
-            if(HiProfWang.size() < 7){
+            if(HiProfWang.size() < xDimensionSize){
                 graph.getViewport().setMinX(1);
-                graph.getViewport().setMaxX(8);
+                graph.getViewport().setMaxX(xDimensionSize);
             }
             else{
-                graph.getViewport().setMinX(HiProfWang.size() - 6);
+                graph.getViewport().setMinX(HiProfWang.size() - xDimensionSize);
                 graph.getViewport().setMaxX(HiProfWang.size());
             }
-            graph.getViewport().setXAxisBoundsManual(true);
+
             // enable scrolling
             graph.getViewport().setScrollable(true); // horizontal scrolling
             graph.addSeries(series);
