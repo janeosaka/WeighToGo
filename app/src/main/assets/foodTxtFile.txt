@@ -1,0 +1,104 @@
+Apple
+72
+Bagel
+289
+Banana 
+153
+Bread
+66
+Butter
+102
+Carrots
+52
+Cheddar
+113
+Chicken Breast
+142
+Chili With Beans
+287
+Chocolate Chip Cookie
+59
+Coffee Regular 
+2
+Coffee Black
+2
+Cola
+136
+Corn
+180
+Egg Boiled
+136
+Egg Scrambled
+136
+Graham Cracker
+59
+Granola Bar
+193
+Green Beans
+40
+Hot Dog Beef
+137
+Hot Dog Pork
+145
+Doughnut
+289
+Ketchup
+15
+Milk
+122
+Oatmeal
+147
+Orange Juice
+112
+Peanut Butter
+180
+Pizza Pepperoni(slice)
+298
+Potato chips
+155
+Pretzels
+108
+Raisins
+130
+Ranch
+146
+Red Wine
+123
+Rice 1Cup
+205
+Salsa
+35
+Spaghetti 1 Cup
+221
+Spaghetti sauce
+92
+Tuna
+100
+Cake
+243
+WHOPPER
+660
+WHOPPER CHEESE
+740
+WHOPPER JR
+310
+WHOPPER TRIPLE MEAT
+1220
+Hamburger
+240
+Cheeseburger
+280
+Chicken Nuggets 6pc
+260
+Onion Rings
+150
+French Fries Small
+320
+French Fries Medium
+380
+French Fries Large
+430
+Big Mac
+563
+Salad Regular
+291
