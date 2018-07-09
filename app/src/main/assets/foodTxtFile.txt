@@ -102,3 +102,89 @@ Big Mac
 563
 Salad Regular
 291
+English Muffin
+160
+Tortilla
+80
+Popcorn
+80
+Applesauce
+120
+Apricots 4
+60
+Banana
+120
+Dates 3
+60
+Cantaloupe 1 cup
+60
+Grapes 15
+60
+Kiwi
+60
+Pineapple 1 cup
+70
+Watermelon 1 cup
+50
+Beets
+25
+Brocoli
+25
+Cabbage
+25
+Spinach
+25
+Cheese 1oz
+40
+Cottage Cheese 1/4cup
+40
+Egg whites
+40
+Fish
+5
+Lean Beef 1oz
+55
+Lean Pork 1oz
+55
+Tuna 1/4 cup
+55
+Salmon 1/4cup
+55
+Beef 1oz
+75
+Lamb 1oz
+75
+Turkey Bacon 3
+100
+Pork Bacon 2
+100
+Soy Milk 8oz
+110
+Buttermilk 8oz
+110
+Milk 2% 8oz
+150
+Whole Milk 8oz
+170
+Goat's Milk 8oz
+170
+Peanuts 10
+45
+Walnuts 2
+45
+Mayonnaise 1tsp
+45
+Salad Dressing 1Tbsp
+45
+Canola Oil 1tsp
+45
+Corn Oil 1tsp
+45
+Peanut Oil 1tsp
+45
+Soybean Oil 1tsp
+45
+Sesame Oil 1tsp
+45
+Sunflower Oil 1tsp
+45
